@@ -4,6 +4,7 @@ body {
 .viewport {
   float: left;
   margin: 10px; }
-
-iframe {
-  border: 1px solid black; }
+  .viewport iframe {
+    border: 1px solid black; }
+  .viewport input[type='text'] {
+    width: 60px; }
