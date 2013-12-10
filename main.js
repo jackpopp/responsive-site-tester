@@ -142,6 +142,7 @@
       heightArray.push($(this).find('.height').val());
       return widthArray.push($(this).find('.width').val());
     });
+    address = $('#address').val();
   };
 
   $(function() {

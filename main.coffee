@@ -118,6 +118,8 @@ resetSizeArrays = ->
 		iframe = $(this).find('iframe')
 		heightArray.push $(this).find('.height').val()
 		widthArray.push $(this).find('.width').val()
+
+	address = $('#address').val()
 	return
 
 $ ->
