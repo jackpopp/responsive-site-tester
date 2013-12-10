@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="core.css">
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="main.js"></script>
+		<title>
+			Responsive Tester
+		</title>
+	</head>
+
+	<body>
+		<div>
+			<div>
+				<label>Address</label><input id="address" type="text" placeholder="Address" value="http://news.bbc.co.uk">
+				<button id="submit">Test Viewports</button>
+			</div>
+			
+			<div>
+				<select>
+					<option>Default</option>
+					<option>iPhone 4 - minus browser chrome</option>
+					<option>iPhone 4 - fullscreen</option>
+					<option>iPhone 5 - minus browser chrome</option>
+					<option>iPhone 5 - fullscreen</option>
+				</select>
+				<button id="new">Add viewport</button>
+			</div>
+		</div>
+
+		<div class="viewport">
+			<iframe class="viewport-1">
+			</iframe>
+			<div>
+				<label>Width</label>
+				<input class="width" type="text" placeholder="Width" value="320">
+			</div>
+			<div>
+				<label>Height</label>
+				<input class="height" type="text" placeholder="Height" value="480">
+			</div>
+		</div>
+	</body>
+</html>
