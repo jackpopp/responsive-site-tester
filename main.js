@@ -45,6 +45,11 @@
       iframe = $(this).find('iframe');
       return iframe.attr('src', iframe.attr('scr'));
     });
+    setTimeout(function() {
+      return $('iframe').each(function() {
+        return $(this).contents().find('body').scrollTop(0);
+      });
+    }, 2000);
     return generateQueryString();
   };
 

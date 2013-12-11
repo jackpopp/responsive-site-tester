@@ -31,6 +31,12 @@ browse = (address) ->
 		iframe = $(this).find('iframe')
 		iframe.attr('src', iframe.attr('scr'))
 
+	# make all pages scroll to top by default
+	setTimeout( 
+		->
+			$('iframe').each -> $(this).contents().find('body').scrollTop(0)
+		2000
+	)
 	generateQueryString()
 
 getParameterByName = (name) ->
