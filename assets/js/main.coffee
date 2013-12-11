@@ -21,22 +21,19 @@ browse = (address) ->
 	$('#address').val(address)
 
 	# if the height and length array count in 1 then we only need to build a single one
+	index = 0
 	$('.viewport').each ->
 		iframe = $(this).find('iframe')
-		iframe.attr('src', "#{requestAddress}#{address}")
+		iframe.attr('src', "#{requestAddress}#{address}&index=#{index}")
 		iframe.css { height: $(this).find('.height').val(), width: $(this).find('.width').val() }
+		$(this).find('.iframe-preloader').css { height: $(this).find('.height').val(), width: $(this).find('.width').val() }
+		index++
 
 	# stops a bug where the page doesnt reload if we're on the same location as previous
 	$('.viewport').each ->
 		iframe = $(this).find('iframe')
 		iframe.attr('src', iframe.attr('scr'))
 
-	# make all pages scroll to top by default
-	setTimeout( 
-		->
-			$('iframe').each -> $(this).contents().find('body').scrollTop(0)
-		2000
-	)
 	generateQueryString()
 
 getParameterByName = (name) ->
@@ -105,10 +102,8 @@ addViewport = (setNewHeights = false)->
 
 		newViewport.find('.height').val(heightWidth[0])
 		newViewport.find('.width').val(heightWidth[1])
-		newViewport.find('iframe').css(
-			height: heightWidth[0]
-			width: heightWidth[1]
-		)
+		newViewport.find('iframe').css {height: heightWidth[0], width: heightWidth[1] }
+		newViewport.find('.iframe-preloader').css {height: heightWidth[0], width: heightWidth[1] }
 
 		heightArray.push heightWidth[0]
 		widthArray.push heightWidth[1]
@@ -150,6 +145,19 @@ removeViewport = (viewport) ->
 		generateQueryString()
 	else
 		alert 'Cant remove all viewports'
+	return
+
+# Called by the iframe when it has finished being loaded in	
+
+window.finishedLoad = (index) ->
+	$('.viewport').eq(index).find('.iframe-preloader').addClass('hide')
+
+	# make all pages scroll to top by default
+	setTimeout( 
+		->
+			$('iframe').each -> $(this).contents().find('body').scrollTop(0)
+		500
+	)
 	return
 
 $ ->
