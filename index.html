@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="core.css">
+		<link rel="stylesheet" type="text/css" href="css/core.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="main.js"></script>
 		<title>
@@ -9,33 +9,38 @@
 	</head>
 
 	<body>
-		<div>
-			<div>
-				<label>address</label><input id="address" type="text" placeholder="address" value="http://news.bbc.co.uk">
-				<button id="submit">Test Viewports</button>
-			</div>
-			
-			<div>
-				<select>
-					<option>Default</option>
-					<option>iPhone 4 - minus browser chrome</option>
-					<option>iPhone 4 - fullscreen</option>
-					<option>iPhone 5 - minus browser chrome</option>
-					<option>iPhone 5 - fullscreen</option>
+		<div class="top-container">
+			<label>address: </label>
+			<input id="address" type="text" placeholder="address" value="http://news.bbc.co.uk">
+
+			<label>viewport size: </label>
+			<span class="selection">
+				<select id="size-selector">
+					<option value="372|320">iPhone 4 - fullscreen (372 x 320)</option>
+					<option value="480|320">iPhone 4 - minus browser chrome (480 x 320)</option>
+					<option value="568|320">iPhone 5 - fullscreen (568 x 320)</option>
+					<option value="460|320">iPhone 5 - minus browser chrome (460 x 320)</option>
 				</select>
 				<button id="new">Add viewport</button>
-			</div>
+			</span>
+
+			<button id="submit">Test Viewports</button>
 		</div>
 
-		<div class="viewport">
-			<div>
-				<label>height</label>
-				<input class="height" type="text" placeholder="height" value="480">
-				<label>width</label>
-				<input class="width" type="text" placeholder="width" value="320">
+		<div class="main-container">
+
+			<div class="viewport">
+				<div class="size-container">
+					<label>height: </label>
+					<input class="height" type="text" placeholder="height" value="480">
+					<label>width: </label>
+					<input class="width" type="text" placeholder="width" value="320">
+					<span class="remove">Remove</span>
+				</div>
+				<iframe>
+				</iframe>
 			</div>
-			<iframe class="viewport-1">
-			</iframe>
+
 		</div>
 	</body>
 </html>

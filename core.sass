@@ -1,5 +1,23 @@
+*
+	box-sizing: border-box
+
+.clearfix
+	&:before
+		content: " "
+		display: table
+
+	&:after 
+		content: " "
+		display: table
+
+.clearfix
+	&:after 
+		clear: both
+
+
 body
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif
+	margin: 0
 
 .viewport
 	float: left
@@ -8,3 +26,42 @@ body
 		border: 1px solid black
 	input[type='text']
 		width: 60px
+
+input[type='text']
+	padding: 5px
+	margin: 5px
+	border: 1px solid #AFACAC
+
+.selection
+	select
+		background: #FFF
+		border: 1px solid #AFACAC
+		width: 268px
+		padding: 5px
+		border-radius: 2px
+		height: 28px
+		-webkit-appearance: none
+
+.top-container
+	padding: 10px
+	background: #50A1E0
+	color: #FFF
+	position: fixed
+	height: 60px
+	width: 100%
+	top: 0
+	#address
+		width: 400px
+
+button
+	padding: 7px 5px
+	margin: 5px
+	border: 0
+	background: #DBDBDB
+
+.size-container
+	margin: 0px 0px 10px 10px
+
+.main-container
+	margin: 60px 0 0 0
+	@extend .clearfix

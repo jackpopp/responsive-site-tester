@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box; }
+
+.clearfix:before, .main-container:before {
+  content: " ";
+  display: table; }
+.clearfix:after, .main-container:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after, .main-container:after {
+  clear: both; }
+
+body {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  margin: 0; }
+
+.viewport {
+  float: left;
+  margin: 10px; }
+  .viewport iframe {
+    border: 1px solid black; }
+  .viewport input[type='text'] {
+    width: 60px; }
+
+input[type='text'] {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #afacac; }
+
+.selection select {
+  background: white;
+  border: 1px solid #afacac;
+  width: 268px;
+  padding: 5px;
+  border-radius: 2px;
+  height: 28px;
+  -webkit-appearance: none; }
+
+.top-container {
+  padding: 10px;
+  background: #50a1e0;
+  color: white;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  top: 0; }
+  .top-container #address {
+    width: 400px; }
+
+button {
+  padding: 7px 5px;
+  margin: 5px;
+  border: 0;
+  background: #dbdbdb; }
+
+.size-container {
+  margin: 0px 0px 10px 10px; }
+
+.main-container {
+  margin: 60px 0 0 0; }

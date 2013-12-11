@@ -84,12 +84,27 @@ setDefaults = ->
 	return
 
 # Adds a new viewport
-addViewport = (addArray = false)->
+addViewport = (setNewHeights = false)->
 	newViewport = mainViewport.clone()
-	$('body').append(newViewport)
-	if addArray
-		widthArray.push newViewport.find('.width').val()
-		heightArray.push newViewport.find('.height').val()
+	$('.main-container').append(newViewport)
+
+	# if set new neights is true then they have added a new view port and it is not one generated from the query string
+	# so we need to check what dropdown is chosen and add the info to the arrays
+	if setNewHeights
+
+		#update the heigth and width of the new viewport
+		string = $('#size-selector').val()
+		heightWidth = string.split('|')
+
+		newViewport.find('.height').val(heightWidth[0])
+		newViewport.find('.width').val(heightWidth[1])
+		newViewport.find('iframe').css(
+			height: heightWidth[0]
+			width: heightWidth[1]
+		)
+
+		heightArray.push heightWidth[0]
+		widthArray.push heightWidth[1]
 		generateQueryString()
 	return
 
@@ -122,8 +137,17 @@ resetSizeArrays = ->
 	address = $('#address').val()
 	return
 
+removeViewport = (viewport) ->
+	# check how many view ports needs at least one.
+	if $('.viewport').length > 1
+		viewport.remove()
+	else
+		alert 'Cant remove all viewports'
+	return
+
 $ ->
 	mainViewport = $('.viewport').eq(0)
 	setDefaults()
 	$('#submit').click -> browse($('#address').val())
 	$('#new').click -> addViewport(true)
+	$('body').on 'click', '.remove', -> removeViewport($(this).parent().parent())
