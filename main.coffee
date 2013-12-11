@@ -141,6 +141,7 @@ removeViewport = (viewport) ->
 	# check how many view ports needs at least one.
 	if $('.viewport').length > 1
 		viewport.remove()
+		generateQueryString()
 	else
 		alert 'Cant remove all viewports'
 	return
