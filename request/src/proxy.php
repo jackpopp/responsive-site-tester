@@ -10,10 +10,10 @@ class Proxy
 	function __construct()
 	{
 		try{
-			if (empty($_POST['uri']))
+			if (empty($_GET['uri']))
 				throw new Exception("Please post a uri");
 
-			$this->setURI($_POST['uri']);
+			$this->setURI($_GET['uri']);
 
 			if ( ! filter_var($this->getURI(), FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED))
 				throw new Exception("Please provide valid uri");	
@@ -78,15 +78,20 @@ class Proxy
 	*/
 	public function requestPage()
 	{
+		$uri = $this->getURI();
+
 		$ch = curl_init(); 
         // set url 
-        curl_setopt($ch, CURLOPT_URL, $this->getURI()); 
+        curl_setopt($ch, CURLOPT_URL, $uri); 
         //return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         // $output contains the output string 
         $result = curl_exec($ch);
         // close curl resource to free up system resources 
         curl_close($ch); 
+
+        # force the base uri to be that of the request uri
+        $result = '<base href='.$uri.' />'.$result;
 
         return $result;
 	}
