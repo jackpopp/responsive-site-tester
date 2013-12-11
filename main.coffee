@@ -6,6 +6,7 @@ heightArray = []
 widthArray = []
 
 mainViewport = null
+requestAddress = 'request.php?uri='
 
 browse = (address) ->
 
@@ -22,7 +23,7 @@ browse = (address) ->
 	# if the height and length array count in 1 then we only need to build a single one
 	$('.viewport').each ->
 		iframe = $(this).find('iframe')
-		iframe.attr('src', address)
+		iframe.attr('src', "#{requestAddress}#{address}")
 		iframe.css { height: $(this).find('.height').val(), width: $(this).find('.width').val() }
 
 	# stops a bug where the page doesnt reload if we're on the same location as previous
