@@ -1,8 +1,9 @@
 <html>
 	<head>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/core.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="main.js"></script>
+		<script src="main.js"></script>	
 		<title>
 			Responsive Tester
 		</title>
@@ -20,11 +21,12 @@
 					<option value="480|320">iPhone 4 - fullscreen (480 x 320)</option>
 					<option value="460|320">iPhone 5 - minus browser chrome (460 x 320)</option>
 					<option value="568|320">iPhone 5 - fullscreen (568 x 320)</option>
+					<option value="519|360">Nexus 5 - minus browser chrome (519 x 360)</option>
 				</select>
-				<button id="new">Add viewport</button>
+				<span id="new" class="button">Add viewport</span>
 			</span>
 
-			<button id="submit">Test Viewports</button>
+			<span id="submit" class="button">Test Viewports</span>
 		</div>
 
 		<div class="main-container">
@@ -35,7 +37,7 @@
 					<input class="height" type="text" placeholder="height" value="480">
 					<label>width: </label>
 					<input class="width" type="text" placeholder="width" value="320">
-					<span class="remove">Remove</span>
+					<span class="remove button">remove</span>
 				</div>
 				<iframe>
 				</iframe>

@@ -16,14 +16,15 @@
 
 
 body
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif
+	font-family: 'Source Sans Pro', sans-serif
+	font-weight: 300
 	margin: 0
 
 .viewport
 	float: left
 	margin: 10px
 	iframe
-		border: 1px solid black
+		border: 1px solid #AFACAC
 	input[type='text']
 		width: 60px
 
@@ -53,11 +54,14 @@ input[type='text']
 	#address
 		width: 400px
 
-button
-	padding: 7px 5px
+.button
+	padding: 5px 10px 7px 10px
 	margin: 5px
+	border-radius: 3px
 	border: 0
-	background: #DBDBDB
+	background: #dbdbdb
+	color: #000
+	cursor: pointer
 
 .size-container
 	margin: 0px 0px 10px 10px
@@ -65,3 +69,6 @@ button
 .main-container
 	margin: 60px 0 0 0
 	@extend .clearfix
+
+.remove
+	cursor: pointer

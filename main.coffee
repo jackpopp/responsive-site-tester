@@ -119,7 +119,6 @@ generateQueryString = ->
 	qs.push "height=#{heightArray.join(',')}"
 	string = qs.join('&')
 	uri = "#{uri}?#{string}"
-	console.log uri
 
 	window.history.pushState("", "Responsive Tool", uri);
 	return
@@ -152,3 +151,5 @@ $ ->
 	$('#submit').click -> browse($('#address').val())
 	$('#new').click -> addViewport(true)
 	$('body').on 'click', '.remove', -> removeViewport($(this).parent().parent())
+
+	$(window).on 'click', 'a', -> console.log this

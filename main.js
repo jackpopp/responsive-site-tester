@@ -136,7 +136,6 @@
     qs.push("height=" + (heightArray.join(',')));
     string = qs.join('&');
     uri = "" + uri + "?" + string;
-    console.log(uri);
     window.history.pushState("", "Responsive Tool", uri);
   };
 
@@ -171,8 +170,11 @@
     $('#new').click(function() {
       return addViewport(true);
     });
-    return $('body').on('click', '.remove', function() {
+    $('body').on('click', '.remove', function() {
       return removeViewport($(this).parent().parent());
+    });
+    return $(window).on('click', 'a', function() {
+      return console.log(this);
     });
   });
 
