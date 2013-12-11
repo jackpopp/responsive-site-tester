@@ -81,18 +81,18 @@ class Proxy
 		$uri = $this->getURI();
 
 		$ch = curl_init(); 
-        // set url 
-        curl_setopt($ch, CURLOPT_URL, $uri); 
-        //return the transfer as a string 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-        // $output contains the output string 
-        $result = curl_exec($ch);
-        // close curl resource to free up system resources 
-        curl_close($ch); 
+		// set url 
+		curl_setopt($ch, CURLOPT_URL, $uri); 
+		//return the transfer as a string 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+		// $output contains the output string 
+		$result = curl_exec($ch);
+		// close curl resource to free up system resources 
+		curl_close($ch); 
 
-        # force the base uri to be that of the request uri
-        $result = '<base href='.$uri.' />'.$result;
+		# force the base uri to be that of the request uri
+		$result = '<base href='.$uri.' />'.$result;
 
-        return $result;
+		return $result;
 	}
 }
