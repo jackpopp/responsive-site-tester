@@ -21,6 +21,15 @@ body {
   margin: 10px; }
   .viewport iframe {
     border: 1px solid #afacac; }
+  .viewport .iframe-preloader {
+    position: absolute;
+    background: white url("../img/preloader.gif") no-repeat center;
+    border: 1px solid #afacac;
+    opacity: 1;
+    transition: opacity 0.5s; }
+    .viewport .iframe-preloader.hide {
+      opacity: 0;
+      transition: opacity 0.5s; }
   .viewport input[type='text'] {
     width: 60px; }
 

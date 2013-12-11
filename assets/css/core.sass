@@ -25,8 +25,21 @@ body
 	margin: 10px
 	iframe
 		border: 1px solid #AFACAC
+	.iframe-preloader
+		position: absolute
+		background: #FFF url('../img/preloader.gif') no-repeat center
+		border: 1px solid #AFACAC
+		opacity: 1
+		transition: opacity 0.5s
+		&.hide
+			opacity: 0
+			transition: opacity 0.5s
+
+
 	input[type='text']
 		width: 60px
+
+
 
 input[type='text']
 	padding: 5px
