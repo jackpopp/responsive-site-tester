@@ -91,7 +91,7 @@ class Proxy
 		curl_close($ch); 
 
 		# force the base uri to be that of the request uri
-		$result = '<base href='.$uri.' />'.$result;
+		$result = '<base href='.$uri.' />'.$result.'<script>parent.finishedLoad('.$_GET['index'].')</script>';
 
 		return $result;
 	}
