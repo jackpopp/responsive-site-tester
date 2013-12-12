@@ -29,7 +29,8 @@ body {
     transition: opacity 0.5s; }
     .viewport .iframe-preloader.hide {
       opacity: 0;
-      transition: opacity 0.5s; }
+      transition: opacity 0.5s;
+      z-index: -1; }
   .viewport input[type='text'] {
     width: 60px; }
 
