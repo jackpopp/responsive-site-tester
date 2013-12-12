@@ -79,7 +79,7 @@ class Proxy
 	*	@param String $uri
 	*	@return String $html
 	*/
-	
+
 	public function requestPage($uri)
 	{
 		# curl request
@@ -114,9 +114,7 @@ class Proxy
 
 		try 
 		{
-			$head = $html->find('head', 0);
-			$text = $head->innertext;
-			$html->find('head', 0)->innertext = '<base href='.$uri.' />'.$text;
+			$html->find('head', 0)->innertext = '<base href='.$uri.' />'.$html->find('head', 0)->innertext;
 			return $html;
 		}
 		catch (Exception $e)
