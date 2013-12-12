@@ -19,6 +19,9 @@
   browse = function(address) {
     var index, patternOne, patternThree, patternTwo;
 
+    $('.iframe-preloader').each(function() {
+      return $(this).removeClass('hide');
+    });
     patternOne = new RegExp("http://");
     patternTwo = new RegExp("https://");
     if (!patternOne.test(address) || patternTwo.test(address)) {
@@ -28,6 +31,8 @@
     while (patternThree.test(address)) {
       address = address.replace(/\/#/, "");
     }
+    address = address.replace(/<script>/g, '<>');
+    address = address.replace(/<\/script>/g, '</>');
     $('#address').val(address);
     index = 0;
     $('.viewport').each(function() {

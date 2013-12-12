@@ -9,6 +9,7 @@ mainViewport = null
 requestAddress = 'request.php?uri='
 
 browse = (address) ->
+	$('.iframe-preloader').each -> $(this).removeClass('hide')
 
 	# make sure it has a fully qualified domain
 	patternOne = new RegExp("http://")
@@ -18,6 +19,8 @@ browse = (address) ->
 	# remove hash if the last value is a hash
 	patternThree = new RegExp(/\/#/)
 	address = address.replace(/\/#/, "") while patternThree.test(address)
+	address = address.replace(/<script>/g, '<>')
+	address = address.replace(/<\/script>/g, '</>')
 	$('#address').val(address)
 
 	# if the height and length array count in 1 then we only need to build a single one
