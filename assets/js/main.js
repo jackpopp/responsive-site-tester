@@ -39,7 +39,7 @@
       var iframe;
 
       iframe = $(this).find('iframe');
-      iframe.attr('src', "" + requestAddress + address + "&index=" + index);
+      iframe.attr('src', "" + requestAddress + address + "/&index=" + index);
       iframe.css({
         height: $(this).find('.height').val(),
         width: $(this).find('.width').val()

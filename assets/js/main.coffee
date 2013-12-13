@@ -27,7 +27,7 @@ browse = (address) ->
 	index = 0
 	$('.viewport').each ->
 		iframe = $(this).find('iframe')
-		iframe.attr('src', "#{requestAddress}#{address}&index=#{index}")
+		iframe.attr('src', "#{requestAddress}#{address}/&index=#{index}")
 		iframe.css { height: $(this).find('.height').val(), width: $(this).find('.width').val() }
 		$(this).find('.iframe-preloader').css { height: $(this).find('.height').val(), width: $(this).find('.width').val() }
 		index++
