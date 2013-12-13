@@ -162,12 +162,10 @@ window.finishedLoad = (index) ->
 		500
 	)
 	return
-
+	
 $ ->
 	mainViewport = $('.viewport').eq(0)
 	setDefaults()
 	$('#submit').click -> browse($('#address').val())
 	$('#new').click -> addViewport(true)
 	$('body').on 'click', '.remove', -> removeViewport($(this).parent().parent())
-
-	$(window).on 'click', 'a', -> console.log this

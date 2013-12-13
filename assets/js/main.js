@@ -196,11 +196,8 @@
     $('#new').click(function() {
       return addViewport(true);
     });
-    $('body').on('click', '.remove', function() {
+    return $('body').on('click', '.remove', function() {
       return removeViewport($(this).parent().parent());
-    });
-    return $(window).on('click', 'a', function() {
-      return console.log(this);
     });
   });
 
