@@ -38,6 +38,7 @@ browse = (address) ->
 		iframe.attr('src', iframe.attr('scr'))
 
 	generateQueryString()
+	return
 
 getParameterByName = (name) ->
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
@@ -142,12 +143,13 @@ resetSizeArrays = ->
 	return
 
 removeViewport = (viewport) ->
-	# check how many view ports needs at least one.
-	if $('.viewport').length > 1
-		viewport.remove()
-		generateQueryString()
-	else
-		alert 'Cant remove all viewports'
+	if confirm "Are you sure you wish to remove this viewport?"
+		# check how many view ports needs at least one.
+		if $('.viewport').length > 1
+			viewport.remove()
+			generateQueryString()
+		else
+			alert 'Cant remove all viewports'
 	return
 
 # Called by the iframe when it has finished being loaded in	
@@ -162,7 +164,7 @@ window.finishedLoad = (index) ->
 		500
 	)
 	return
-	
+
 $ ->
 	mainViewport = $('.viewport').eq(0)
 	setDefaults()

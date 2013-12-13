@@ -56,7 +56,7 @@
       iframe = $(this).find('iframe');
       return iframe.attr('src', iframe.attr('scr'));
     });
-    return generateQueryString();
+    generateQueryString();
   };
 
   getParameterByName = function(name) {
@@ -170,11 +170,13 @@
   };
 
   removeViewport = function(viewport) {
-    if ($('.viewport').length > 1) {
-      viewport.remove();
-      generateQueryString();
-    } else {
-      alert('Cant remove all viewports');
+    if (confirm("Are you sure you wish to remove this viewport?")) {
+      if ($('.viewport').length > 1) {
+        viewport.remove();
+        generateQueryString();
+      } else {
+        alert('Cant remove all viewports');
+      }
     }
   };
 
