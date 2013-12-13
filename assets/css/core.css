@@ -50,12 +50,14 @@ input[type='text'] {
 
 .top-container {
   padding: 10px;
-  background: #50a1e0;
-  color: white;
+  background: #7ab3c5;
+  color: black;
   position: fixed;
-  height: 60px;
+  height: 55px;
   width: 100%;
-  top: 0; }
+  top: 0;
+  text-align: center;
+  font-size: 18px; }
   .top-container #address {
     width: 400px; }
 
@@ -66,10 +68,15 @@ input[type='text'] {
   border: 0;
   background: #dbdbdb;
   color: black;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 16px; }
+  .button.button-go {
+    color: white;
+    background: #8fcf53; }
 
 .size-container {
-  margin: 0px 0px 10px 10px; }
+  text-align: center;
+  margin: 0px 0px 10px 0px; }
 
 .main-container {
   margin: 60px 0 0 0; }
