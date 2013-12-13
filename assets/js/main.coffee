@@ -154,7 +154,7 @@ removeViewport = (viewport) ->
 
 # Called by the iframe when it has finished being loaded in	
 
-window.finishedLoad = (index) ->
+finishedLoad = (index) ->
 	$('.viewport').eq(index).find('.iframe-preloader').addClass('hide')
 
 	# make all pages scroll to top by default
@@ -164,6 +164,8 @@ window.finishedLoad = (index) ->
 		500
 	)
 	return
+
+window.finishedLoad = finishedLoad
 
 $ ->
 	mainViewport = $('.viewport').eq(0)
